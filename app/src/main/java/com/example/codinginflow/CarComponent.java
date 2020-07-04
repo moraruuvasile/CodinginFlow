@@ -1,8 +1,10 @@
 package com.example.codinginflow;
 
+import com.example.codinginflow.library.WeelsModule;
+
 import dagger.Component;
 
-@Component
+@Component (modules = WeelsModule.class)
 interface CarComponent {
 
     Car getCar();

@@ -2,6 +2,8 @@ package com.example.codinginflow;
 
 import android.util.Log;
 
+import com.example.codinginflow.library.Wheels;
+
 import javax.inject.Inject;
 
 class Car {
@@ -11,7 +13,7 @@ class Car {
     Wheels wheels;
 
     @Inject
-    public Car( Wheels wheels) {
+    public Car(Wheels wheels) {
         this.wheels = wheels;
     }
 
