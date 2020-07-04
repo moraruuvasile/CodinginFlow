@@ -2,6 +2,7 @@ package com.example.codinginflow;
 
 import android.util.Log;
 
+import com.example.codinginflow.Interface.Engine2;
 import com.example.codinginflow.library.Wheels;
 
 import javax.inject.Inject;
@@ -11,15 +12,17 @@ class Car {
 
     @Inject Engine engine;
     Wheels wheels;
+    Engine2 engine2;
 
     @Inject
-    public Car(Wheels wheels) {
+    public Car(Wheels wheels, Engine2 engine2) {
         this.wheels = wheels;
+        this.engine2 = engine2;
     }
 
     void drive(){
         Log.d(TAG, "drivinggggggggggg");
-        engine.endgineSound();
+        engine2.start();
     }
 
     @Inject
