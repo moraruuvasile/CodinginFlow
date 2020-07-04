@@ -5,18 +5,34 @@ import android.util.Log;
 import javax.inject.Inject;
 
 class Car {
-    private static final String TAG = "Car";
+    private static final String TAG = "Engine";
 
-    Engine engine;
+    @Inject Engine engine;
     Wheels wheels;
 
     @Inject
-    public Car(Engine engine, Wheels wheels) {
-        this.engine = engine;
+    public Car( Wheels wheels) {
         this.wheels = wheels;
     }
 
     void drive(){
         Log.d(TAG, "drivinggggggggggg");
+        engine.endgineSound();
     }
+
+    @Inject
+    void vasea(){
+        Log.d(TAG, "vasea:  yo yo yo" );
+        enableRemore(new Remote());
+    }
+
+    public void enableRemore(Remote remote){
+        remote.setListener(this);
+    }
+
+
+//    @Inject
+//    public void enableRemore(Remote remote){
+//        remote.setListener(this);
+//    }
 }
