@@ -6,4 +6,6 @@ import dagger.Component;
 interface CarComponent {
 
     Car getCar();
+
+    void injectt(MainActivity mainActivity);
 }
