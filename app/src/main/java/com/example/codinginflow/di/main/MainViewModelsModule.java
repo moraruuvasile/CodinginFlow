@@ -3,6 +3,7 @@ package com.example.codinginflow.di.main;
 import androidx.lifecycle.ViewModel;
 
 import com.example.codinginflow.di.ViewModelKey;
+import com.example.codinginflow.ui.main.posts.PostsViewModel;
 import com.example.codinginflow.ui.main.profile.ProfileViewModel;
 
 import dagger.Binds;
@@ -17,4 +18,8 @@ public abstract class MainViewModelsModule {
     @ViewModelKey(ProfileViewModel.class)
     public abstract ViewModel bindProfileViewModel(ProfileViewModel viewModel);
 
+    @Binds
+    @IntoMap
+    @ViewModelKey(PostsViewModel.class)
+    public abstract ViewModel bindPostsViewModel(PostsViewModel viewModel);
 }

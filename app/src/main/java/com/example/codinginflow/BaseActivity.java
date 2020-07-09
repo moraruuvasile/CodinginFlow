@@ -17,7 +17,7 @@ import dagger.android.support.DaggerAppCompatActivity;
 
 public abstract class BaseActivity extends DaggerAppCompatActivity {
 
-    private static final String TAG = "DaggerExample";
+    private static final String TAG = "BaseActivity";
 
     @Inject
     public SessionManager sessionManager;
@@ -41,13 +41,13 @@ public abstract class BaseActivity extends DaggerAppCompatActivity {
                         }
 
                         case AUTHENTICATED:{
-                            Log.d(TAG, "onChanged: BaseActivity: AUTHENTICATED... " +
-                                    "Authenticated as: " + userAuthResource.data.getEmail());
+                            Log.d(TAG, "onChanged: LOGIN SUCCESS: " + userAuthResource.data.getEmail());
                             break;
                         }
 
                         case ERROR:{
-                            Log.d(TAG, "onChanged: BaseActivity: ERROR...");
+                            Log.e(TAG, "onChanged: " + userAuthResource.message);
+
                             break;
                         }
 

@@ -15,7 +15,7 @@ import javax.inject.Singleton;
 @Singleton
 public class SessionManager {
 
-    private static final String TAG = "DaggerExample";
+    private static final String TAG = "SessionManager";
 
     // data
     private MediatorLiveData<AuthResource<User>> cachedUser = new MediatorLiveData<>();
