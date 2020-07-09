@@ -2,8 +2,8 @@ package com.example.codinginflow.di;
 
 import android.app.Application;
 
-
 import com.example.codinginflow.BaseApplication;
+import com.example.codinginflow.Vasea;
 
 import javax.inject.Singleton;
 
@@ -21,6 +21,7 @@ import dagger.android.support.AndroidSupportInjectionModule;
         })
 public interface AppComponent extends AndroidInjector<BaseApplication> {
 
+    Vasea vasea();
 
     @Component.Builder
     interface Builder{

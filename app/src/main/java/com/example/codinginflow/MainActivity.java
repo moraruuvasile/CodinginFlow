@@ -25,6 +25,11 @@ public class MainActivity extends DaggerAppCompatActivity {
     @Inject
     MainApi mainApi;
 
+    @Inject
+    Vasea vasea;
+
+
+
     private RecyclerView recyclerView;
 
     @Override
@@ -32,7 +37,7 @@ public class MainActivity extends DaggerAppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerView = findViewById(R.id.recycler_view);
-
+        System.out.println(vasea.ion);
         initRecyclerView();
     }
 
