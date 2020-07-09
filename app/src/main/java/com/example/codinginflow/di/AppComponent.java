@@ -2,8 +2,8 @@ package com.example.codinginflow.di;
 
 import android.app.Application;
 
+
 import com.example.codinginflow.BaseApplication;
-import com.example.codinginflow.SessionManager;
 
 import javax.inject.Singleton;
 
@@ -15,15 +15,12 @@ import dagger.android.support.AndroidSupportInjectionModule;
 @Singleton
 @Component(
         modules = {
-                AndroidSupportInjectionModule.class,
                 ActivityBuildersModule.class,
-                AppModule.class,
-                ViewModelFactoryModule.class
+                AndroidSupportInjectionModule.class,
+                AppModule.class
         })
-
 public interface AppComponent extends AndroidInjector<BaseApplication> {
 
-    SessionManager sessionManager();
 
     @Component.Builder
     interface Builder{

@@ -1,12 +1,7 @@
 package com.example.codinginflow.di;
 
-import android.app.Application;
-
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.RequestManager;
-import com.bumptech.glide.request.RequestOptions;
-import com.example.codinginflow.R;
-import com.example.codinginflow.util.Constants;
+import com.example.codinginflow.MainApi;
+import com.example.codinginflow.PostRecyclerAdapter;
 
 import javax.inject.Singleton;
 
@@ -23,25 +18,21 @@ public class AppModule {
     @Provides
     static Retrofit provideRetrofitInstance() {
         return new Retrofit.Builder()
-                .baseUrl(Constants.BASE_URL)
+                .baseUrl("https://jsonplaceholder.typicode.com")
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }
 
-    @Singleton
     @Provides
-    static RequestOptions provideRequestOptions(){
-        return RequestOptions
-                .placeholderOf(R.drawable.white_background)
-                .error(R.drawable.white_background);
+    static MainApi provideMainApi(Retrofit retrofit){
+        return retrofit.create(MainApi.class);
     }
 
-    @Singleton
     @Provides
-    static RequestManager provideGlideInstance(Application application, RequestOptions requestOptions){
-        return Glide.with(application)
-                .setDefaultRequestOptions(requestOptions);
+    static PostRecyclerAdapter provideAdapter(){
+        return new PostRecyclerAdapter();
     }
+
 
 }

@@ -1,4 +1,4 @@
-package com.example.codinginflow.models;
+package com.example.codinginflow;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

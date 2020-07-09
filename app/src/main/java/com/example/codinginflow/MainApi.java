@@ -1,10 +1,8 @@
-package com.example.codinginflow.network.main;
-
-import com.example.codinginflow.models.Post;
+package com.example.codinginflow;
 
 import java.util.List;
 
-import io.reactivex.Flowable;
+import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
@@ -12,7 +10,7 @@ public interface MainApi {
 
     // /posts?userId=1/
     @GET("posts")
-    Flowable<List<Post>> getPostsFromUser(
+    Call<List<Post>> getPostsFromUser(
             @Query("userId") int id
     );
 }

@@ -1,4 +1,4 @@
-package com.example.codinginflow.ui.main.posts;
+package com.example.codinginflow;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,9 +7,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.codinginflow.R;
-import com.example.codinginflow.models.Post;
 
 import java.util.ArrayList;
 import java.util.List;
