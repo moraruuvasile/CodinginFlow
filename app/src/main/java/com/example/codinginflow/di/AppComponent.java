@@ -20,6 +20,8 @@ import dagger.android.support.AndroidSupportInjectionModule;
                 AppModule.class,
                 ViewModelFactoryModule.class
         })
+
+
 public interface AppComponent extends AndroidInjector<BaseApplication> {
 
     SessionManager sessionManager();

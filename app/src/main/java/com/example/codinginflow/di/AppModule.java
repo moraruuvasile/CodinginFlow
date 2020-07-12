@@ -1,6 +1,9 @@
 package com.example.codinginflow.di;
 
 import android.app.Application;
+import android.graphics.drawable.Drawable;
+
+import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
@@ -42,6 +45,12 @@ public class AppModule {
     static RequestManager provideGlideInstance(Application application, RequestOptions requestOptions){
         return Glide.with(application)
                 .setDefaultRequestOptions(requestOptions);
+    }
+
+    @Singleton
+    @Provides
+    static Drawable provideAppDrawable(Application application){
+        return ContextCompat.getDrawable(application, R.drawable.logo);
     }
 
 }
